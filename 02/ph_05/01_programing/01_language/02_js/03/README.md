@@ -138,3 +138,5 @@ $(セレクター).on(イベント名,子セレクター,function() {
 $('td').on('click', function(e) {...});  //負荷大
 $('table').on('click', 'td', function(e) { ... }); //負荷小
 ```
+
+![image](image/jquery_29.png)

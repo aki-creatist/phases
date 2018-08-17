@@ -16,6 +16,7 @@
 ![image](image/array_02.png)
 
 ![image](image/array_0002.png)
+![image](image/array_0003.png)
 
 ### 連想配列に名前をつける
 
