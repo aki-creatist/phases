@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_l_2.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="sample01_loginForm" type="sample01.LoginForm"/>
+    </form-beans>
+
+    <action-mappings>
+        <action path="/sample01/login"
+                type="sample01.LoginAction"
+                name="sample01_loginForm"
+                scope="request">
+            <forward name="success" path="/WEB-INF/jsp/sample01/success.jsp"/>
+        </action>
+    </action-mappings>
+</struts-config>

@@ -1,0 +1,12 @@
+public class SampleString02 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        // TODO 自動生成されたメソッド・スタブ
+        String before = "となりのきゃくはよくかきくうきゃくだ";
+        String after = before.replace("きゃく", "客");
+        System.out.println(after);
+    }
+}

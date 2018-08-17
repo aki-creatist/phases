@@ -1,0 +1,15 @@
+public class SampleString04 {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        // TODO 自動生成されたメソッド・スタブ
+        String eMail = "xxx@test.jp";
+        int at = eMail.indexOf('@');
+        System.out.println("ユーザ名:" + eMail.substring(0,at));
+        System.out.println("ドメイン名:" + eMail.substring(at + 1));
+
+    }
+
+}

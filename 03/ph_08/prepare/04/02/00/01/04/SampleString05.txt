@@ -1,0 +1,8 @@
+public class SampleString05 {
+    public static void main(String[] args) {
+        // TODO 自動生成されたメソッド・スタブ
+        int year = 2016, month = 6, day = 1;
+        String date = String.format("%d年%d月%d日", year, month, day);
+        System.out.println(date);
+    }
+}

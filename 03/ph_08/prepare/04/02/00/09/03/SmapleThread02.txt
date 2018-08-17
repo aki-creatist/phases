@@ -1,0 +1,17 @@
+public class SmapleThread02 {
+    public static void main (String[] args) {
+        Runnable cld = new ChildRunnable();    // 説明[1]
+        Thread t = new Thread(cld);                    //    説明[2]
+        t.start();                                                // 説明[3]
+        for ( int i = 0; i < 500; i++ ) {
+            System.out.println("親スレッド：" +i );
+        }
+        try {
+            System.out.println("親スレッドの繰り返しが終了した");
+            t.join();
+            System.out.println("子スレッドが終了した");
+        }
+        catch (InterruptedException e) {
+        }
+    }
+}

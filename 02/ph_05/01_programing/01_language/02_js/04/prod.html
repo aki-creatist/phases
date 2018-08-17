@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>はじめの一歩</title>
+</head>
+
+<style>
+    .context {
+        position: absolute;
+        display: none;
+        padding: 0px;
+        border-width: 1px;
+        border-style: solid;
+        background-color: white;
+    }
+
+    .context li {
+        padding: 10px 5px 10px 10px;
+        list-style: none;
+        border-bottom-color: #ccc;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        font-size: small;
+    }
+
+    .context li a {
+        text-decoration: none;
+        color:Black;
+    }
+</style>
+
+<script>
+    $(function() {
+        $(document)
+            .mousedown(function(e) {
+                if (e.which === 3) {
+                    $('#menu').css({
+                        display: 'block',
+                        top: e.pageY,
+                        left: e.pageX
+                    });
+                }
+            })
+            .click(function(e) {
+                if (e.which === 1) {
+                    $('#menu').css('display', 'none');
+                }
+            })
+            .contextmenu(function(e) {
+                e.preventDefault();
+            });
+    });
+</script>
+
+<ul id="menu" class="context">
+    <li>
+        <a href="http://akifamily.main.jp/DT/kaisetsu/day5th/jquery/jquery_03.php">フィルターで絞り込む</a>
+    </li>
+
+    <li>
+        <a href="http://akifamily.main.jp/DT/kaisetsu/day5th/jquery/jquery_04.php">イベント処理</a>
+    </li>
+
+    <li>
+        <a href="http://akifamily.main.jp/DT/kaisetsu/day5th/jquery/jquery_05.php">ページ読み直し</a>
+    </li>
+</ul>
+
+</body>
+</html>

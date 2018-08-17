@@ -1,0 +1,25 @@
+public class SampleException03 {
+    public static void main( String[] args ) {
+        ExceptionTest t = new ExceptionTest();
+        t.execute(-5);    // 引数の政府を変えて実行してみよう
+    }
+}
+class ExceptionTest {
+    public void execute ( int x ) {
+        try {
+            System.out.println("①最初に実行");
+            if ( x < 0 ) {
+
+            }
+            System.out.println("②正の整数");
+        }
+        catch (Exception e ) {
+            System.out.println("③例外処理：負の整数");
+            return;
+        }
+        finally {
+            System.out.println("④何時でも実行");
+        }
+        System.out.println("⑤最後に実行");
+    }
+}

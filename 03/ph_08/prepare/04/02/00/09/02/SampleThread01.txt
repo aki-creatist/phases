@@ -1,0 +1,24 @@
+public class SampleThread01 {
+    public static void main(String[] args {
+        Thread t = new ChildThread();
+        t.start();
+        for ( int i = 0; i < 500; i++ ) {
+            System.out.println("親スレッド:" +i );
+        }
+        try {
+            System.out.println("親スレッドの繰り返しが終了した");
+            t.join();
+            System.out.println("子スレッドが終了した");
+        }
+        catch (Interrupt edException e) {
+        }
+    }
+}
+
+class ChildThread extends Thread {
+    public void fun() {
+        for (int i = 0; i < 1000; i++) {
+            System.out.println("子スレッド:" +i );
+        }
+    }
+}

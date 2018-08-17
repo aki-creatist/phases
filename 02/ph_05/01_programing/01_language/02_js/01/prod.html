@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>はじめの一歩</title>
+
+    <style>
+        table{border:solid 1px orange; border-spacing:0px;}
+        th,td{border:solid 1px orange; padding:4px; text-align: center;}
+        .outer{width: 328px; text-align: center;}
+        .prod_list{text-align: center;}
+        /*ul*/ .prod_list{list-style-type: none; background: gold; padding: 4px;}
+        li{text-align: left;}
+        [type = "button"], [type = "submit"]{margin: 16px;}
+
+        /*ダブりをなくすための仮id -----------------------------*/
+        #basket3{width: 300px; margin: auto;}
+        #basket4{width: 300px; margin: auto;}
+        #basket5{width: 300px; margin: auto;}
+        #basket6{width: 300px; margin: auto;}
+        #basket7{width: 300px; margin: auto;}
+
+        /*------------------------------------------------------*/
+
+        .empty_basket{border:dotted 6px darkcyan;
+            background: black; padding: 8px;}
+        .filled_basket{border:dotted 6px green;
+            background: yellow; padding: 8px;}
+    </style>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+    window.addEventListener('load',
+        //ページロード時の処理
+        function(event){
+            var elem = document.getElementById('btn_addprod4');
+            elem.addEventListener('click',
+                //btn_addprodクリック時の処理
+                function(event){
+                    var elem = document.getElementById('basket4');
+                    elem.className = 'filled_basket';
+                    elem.innerHTML += '<p>商品が入る</p>';
+                }
+                , false);
+        }
+        , false);
+</script>
+
+<!-- idは数字の4で統一 -->
+<div class="outer">
+    <form class="clear">
+        <ul class="prod_list">
+            <li><input type="radio" name="products" value="none" checked>
+                なし</li>
+            <li><input type="radio" name="products" value="チェア">
+                チェア</li>
+            <li><input type="radio" name="products" value="デスク">
+                デスク</li>
+            <li><input type="radio" name="products" value="スタンド">
+                スタンド</li>
+        </ul>
+        <input type="text" id="txt_amount4" value="0">個
+        <input type="button" id="btn_addprod4" value="▼add">
+        <div id="basket4" class="empty_basket">
+        </div>
+        <input type="submit" value="購入">
+    </form>
+</div>
+
+<script type="text/javascript">
+    window.addEventListener('load',
+        //ページロード時の処理
+        function(event){
+            var elem = document.getElementById('btn_addprod5');
+            elem.addEventListener('click', addProduct3, false);
+        }
+        , false);
+    //btn_addprodクリック時の処理
+    function addProduct3(event){
+        var basket = document.getElementById('basket5');
+        basket.className = 'filled_basket';
+    }
+</script>
+
+<!-- idは数字の5で統一 -->
+<div class="outer">
+    <form class="clear">
+        <ul class="prod_list">
+            <li><input type="radio" name="products" value="none" checked>
+                なし</li>
+            <li><input type="radio" name="products" value="チェア">
+                チェア</li>
+            <li><input type="radio" name="products" value="デスク">
+                デスク</li>
+            <li><input type="radio" name="products" value="スタンド">
+                スタンド</li>
+        </ul>
+        <input type="text" id="txt_amount5" value="0">個
+        <input type="button" id="btn_addprod5" value="▼add">
+        <div id="basket5" class="empty_basket">
+        </div>
+        <input type="submit" value="購入">
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    window.addEventListener('load',
+        //ページロード時の処理
+        function(event){
+            var elem = document.getElementById('btn_addprod6');
+            elem.addEventListener('click', addProduct, false);
+        }
+        , false);
+    //btn_addprodクリック時の処理
+    function addProduct(event){
+        var basket = document.getElementById('basket6');
+        basket.className = 'filled_basket';
+        //選択されたオプションを取得
+        var product = '';
+        var options = document.getElementsByName('products_AKI');
+        for(var i=0; i < options.length; i++){
+            if(options[i].checked){
+                product = options[i].value;
+                break;
+            }
+        }
+        //個数を取得
+        var tbox = document.getElementById('txt_amount6');
+        var amount = tbox.value;
+        //値を設定
+        basket.innerHTML += '<p>' + product + ' ' + amount + '個</p>';
+    }
+</script>
+
+<!-- idは数字の6で統一 -->
+<div class="outer">
+    <form class="clear">
+        <ul class="prod_list">
+            <li><input type="radio" name="products_AKI" value="none" checked>
+                なし</li>
+            <li><input type="radio" name="products_AKI" value="チェア">
+                チェア</li>
+            <li><input type="radio" name="products_AKI" value="デスク">
+                デスク</li>
+            <li><input type="radio" name="products_AKI" value="スタンド">
+                スタンド</li>
+        </ul>
+        <input type="text" id="txt_amount6" value="0">個
+        <input type="button" id="btn_addprod6" value="▼add">
+        <div id="basket6" class="empty_basket">
+        </div>
+        <input type="submit" value="購入">
+    </form>
+</div>
+
+</body>
+</html>

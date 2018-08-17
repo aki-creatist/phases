@@ -1,0 +1,49 @@
+public class Sample04 {
+    public static void main(String[] args) {
+        Monitor mon = new Monitor();
+        Thread t1 = new Child("t1",mon);
+        Thread t2 = new Child("t2",mon);
+        t1.start();
+        t2.start();
+
+        try {
+            Thread.sleep(3000);
+        }
+        catch( InterruptedException e) {
+        }
+        mon.restart();
+
+        System.out.println("親スレッド終了");
+    }
+}
+
+class Child extends Thread {
+    private String name;
+    private Monitor mon;
+    public Child (String name, Monitor y){
+        this.name = name;
+        this.mon = y;
+    }
+    public void run() {
+        System.out.println( name + ":前処理中");
+        mon.pause();
+        System.out.println( name + ":後処理中");
+    }
+}
+
+class Monitor {
+    public synchronized void pause() {
+        try {
+            System.out.println("待機する");
+            wait();
+            system.out.println("再開する");
+        }
+        catch( InterruptedException e ){
+            System.out.println(e);
+        }
+    }
+    public synchronized void restart() {
+        System.out.println("全スレッドに再開を指示する");
+        notifyAll();
+    }
+}

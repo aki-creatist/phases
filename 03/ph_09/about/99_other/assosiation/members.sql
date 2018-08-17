@@ -1,0 +1,5 @@
+CREATE TABLE members (
+    id        MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name    VARCHAR(20) NOT NULL,
+    PRIMARY KEY( id )
+);

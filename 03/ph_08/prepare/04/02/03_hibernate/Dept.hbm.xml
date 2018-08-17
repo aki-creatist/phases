@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+    <!--
+        Created by the Middlegen Hibernate plugin 2.2
+
+        http://boss.bekk.no/boss/middlegen/
+        http://www.hibernate.org/
+    -->
+
+    <class
+            name="entity.Dept"
+            table="DEPT"
+            lazy="false"
+    >
+
+        <id
+                name="deptId"
+                type="java.lang.Integer"
+                column="DEPT_ID"
+        >
+
+            <generator class="assigned" />
+        </id>
+
+        <property
+                name="deptName"
+                type="java.lang.String"
+                column="DEPT_NAME"
+                not-null="true"
+                length="40"
+        />
+
+        <!-- Associations -->
+
+        <!-- bi-directional one-to-many association to Emp -->
+
+        <set
+                name="emps"
+                lazy="true"
+                inverse="true"
+                cascade="all"
+
+        >
+            <key>
+                <column name="DEPT_ID" />
+            </key>
+
+            <one-to-many
+                    class="entity.Emp"
+            />
+        </set>
+
+    </class>
+</hibernate-mapping>

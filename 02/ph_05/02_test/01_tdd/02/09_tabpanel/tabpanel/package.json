@@ -1,0 +1,11 @@
+{
+  "name": "dom-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "node_modules/karma/bin/karma start"
+  },
+  "author": "",
+  "license": "ISC"
+}

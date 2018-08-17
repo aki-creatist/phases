@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>mousemove</title>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<script>
+    $(function() {
+        $('.door').mousemove(function(e) {
+            var x = e.pageX;
+            if (x < 50) {
+                $(this).attr('src','./image/close_00.png');
+            } else if (x < 120) {
+                $(this).attr('src','./image/close_001.png');
+            } else if (x < 190) {
+                $(this).attr('src','./image/open_05.png');
+            } else if (x < 260) {
+                $(this).attr('src','./image/open_04.png');
+            } else if (x < 330) {
+                $(this).attr('src','./image/open_03.png');
+            } else if (x < 400) {
+                $(this).attr('src','./image/open_02.png');
+            } else {
+                $(this).attr('src','./image/open_01.png');
+            }
+        });
+    });
+</script>
+<img class="door" src="image/close_00.png" width="100%">
+</body>
+</html>

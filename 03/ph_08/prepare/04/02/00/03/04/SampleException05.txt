@@ -1,0 +1,31 @@
+public class SampleException05 {
+    public static void main ( String[] args ) {
+        ExStudent p = new ExStudent("Peter Pan", 11);
+        try {
+            p.smoking();
+        }
+        catch (OriginalException e ) {
+            System.out.println(e.getReason() );
+        }
+    }
+}
+class OriginalException extends Exception {
+    private String reason;
+    public OriginalException(String reason) {
+        this.reason = reason;
+    }
+}
+class ExStuden {
+    private String name;
+    private int age;
+    public ExStudent( String name, int age ) {
+        this.name = name;
+        this.age = age;
+    }
+    public void smoking() throws OriginalException{
+        if (age < 20 ){
+            throws new OriginalException("未成年");
+        }
+        System.out.println( name + "は喫煙中");
+    }
+}

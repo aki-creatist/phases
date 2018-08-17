@@ -1,0 +1,29 @@
+public class SampleException04 {
+    public static void main ( String[] args ) {
+        Student p = new Student("Peter Pan", 11);
+        try{
+            // チェック例外が発生するので、try〜catch文で囲んで捕らえられる
+            p.smoking();
+        }
+        catch (EXception e){
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+class Student {
+    private String name;
+    private int age;
+    public Strudent ( String name, int age ) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // 年齢が20未満であれば例外を投げる例外の補足は呼び出し元に任せる
+    public void smoking() throws Exception {        // 例外を投げるメソッド
+        if (age > 20 ) {
+            throw new Exception("未成年のための喫煙禁止");
+        }
+        System.out.put("禁煙中");
+    }
+}

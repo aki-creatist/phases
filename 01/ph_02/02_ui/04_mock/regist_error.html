@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>会員登録</title>
+</head>
+
+<body>
+<form>
+    <table>
+        <tr>
+            <th>お名前(氏名)<span class="red">*</span></th>
+            <td>
+                <input type="text" name="family_name" value="最初に入ってる値１" />
+                <input type="text" name="first_name"  value="最初に入ってる値２" />
+                <br /><span style="color:red;">お名前(氏)を入力してください</span>
+                <br /><span style="color:red;">お名前(名)を入力してください</span>
+            </td>
+        </tr>
+        <tr>
+            <th>お名前(かな)</th>
+            <td>
+                <input type="text" name="family_name_kana" value="最初に入ってる値３" />
+                <input type="text" name="first_name_kana"  value="最初に入ってる値４" />
+            </td>
+        </tr>
+        <tr>
+            <th>性別<span class="red">*</span></th>
+            <td>
+                <input type = "radio" name="sex" value = "0" >男
+                <input type = "radio" name="sex" value = "1" >女
+                <br /><span style="color:red;">性別を選択してください</span>
+            </td>
+        </tr>
+        <tr>
+            <th>生年月日<span class="red">*</span></th>
+            <td>
+                <select name="year" >
+                    <option selected></option>
+                    <option value="1900">1900</option>
+                </select>年
+
+                <select name='month'>
+                    <option selected></option>
+                    <option value="12" >12</option>
+                </select>月
+
+                <select name='day'>
+                    <option selected></option>
+                    <option value="1">1</option>
+                </select>日
+                <br /><span style="color:red;">生年月日の年を選択してください</span>
+                <br /><span style="color:red;">生年月日の月を選択してください</span>
+                <br /><span style="color:red;">生年月日の日を選択してください</span>
+            </td>
+        </tr>
+        <tr>
+            <th>郵便番号<span class="red">*</span></th>
+            <td>
+                <input type="text" name="zip1" value="最初に入ってる値５ ?>" id="zip1" size="3" maxlength="3" /> -
+                <input type="text" name="zip2" value="最初に入ってる値６" id="zip2" size="4" maxlength="4" />
+                <input type="button" name="address_search" value="〒から住所を入力" id="address_search" />
+                <br /><span style="color:red;">住所を入力してください</span>
+            </td>
+        </tr>
+        <tr>
+            <th>住所<span class="red">*</span></th>
+            <td>
+                <input type="text" name="address" value="最初に入ってる値７" id="address" size="40" />
+                <br /><span style="color:red;">住所を入力してください</span>
+            </td>
+        </tr>
+        <tr>
+            <th>メールアドレス<span class="red">*</span></th>
+            <td>
+                <input type="text" name="email" value="最初に入ってる値８" size="40" />
+                <br /><span style="color:red;">メールアドレスを正しい形式で入力してください</span>
+            </td>
+        </tr>
+        <tr>
+            <th>電話番号<span class="red">*</span></th>
+            <td>
+                <input type="text" name="tel1" value="最初に入ってる値９" size="6" maxlength="6" />-
+                <input type="text" name="tel2" value="最初に入ってる値１０" size="6" maxlength="6" />-
+                <input type="text" name="tel3" value="最初に入ってる値１１" size="6" maxlength="6" />
+                <br /><span style="color:red;">電話番号は、半角数字で11桁以内で入力してください</span>
+            </td>
+        </tr>
+        <tr>
+            <th>交通手段<span class="red">*</span></th>
+            <td>
+                <input type="checkbox" name="traffic['.$i.']" value="'.$i.'"  />徒歩
+                <br /><span style="color:red;">最低一つの交通機関を入力してください</span>
+            </td>
+        </tr>
+        <tr>
+            <th>備考</th>
+            <td>
+                <textarea name="contents" rows="4" cols="40">最初に入ってる値１２</textarea>
+                <br /><span style="color:red;">何もない場合は特になしと記述してください</span>
+            </td>
+        </tr>
+    </table>
+    <div><input type="submit" name="confirm" value="登録確認" /></div>
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+import java.util.Set;
+import java.util.HashSet;
+
+public class SampleCollectionList02{
+    public static void main (String[] args){
+        Set<String> names = new HashSet<String>();
+        names.add("田中");
+        names.add("鈴木");
+        names.add("高橋");
+        for (String name : names){
+            System.out.println( i + ":" + names.get(i) );
+        }
+        names.remove("田中");
+        names.remove("高橋");
+        for ( String name : names){
+            System.out.println( i + ":" + names.get(i) );
+        }
+    }
+}

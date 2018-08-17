@@ -1,0 +1,50 @@
+# Modelを選択する
+what would you like to Bake? (D/M/V/C/P/F/T/Q)
+> M
+
+# 自動生成するモデルクラスを選択
+Use Database Config: (default/test) #どのDB定義を使ってDBにアクセスするかを選択
+[default] > default                 #ここでは定義した$defaultの定義を利用してDBに接続する
+
+#作成するテーブルを選択する
+Possible Model based on your current database: #テーブルの一覧が候補として表示される
+1. MeetingRoom
+2. Meeting
+3. MeetingMember
+4. Member
+Enter a number from the list above,  #まだテーブルを作っていない場合は、モデル名を直接入力可能
+type in the name of anohter model, or 'q' to exit
+[q] > 1
+
+# displayfieldの設定 - 表示項目を設定するか
+A displayfield could not be automatically datected # 表示項目とは人間が目で見てレコードを識別できる項目
+would you like to choose one? (y/n)                # これを指定しておくと、画面表示の際にIDと表示項目から簡単にプルダウンを作ったりできる
+> n
+
+# 入力チェックの定義
+Would you like to supply validation criteria #テーブル項目ごとに入力チェックを定義するか
+for the field in your model? (y/n)
+> y
+
+37 - Do not do any validation on this field.
+--------------------------------------------
+or enter in a valid regex validation string.
+Alternatively [s] skip the rest of the fields.
+
+[37] > s
+
+# テーブルの関連の定義 - テーブル間の関連も実際のテーブルからBakeが自動的に候補を拾い集めてくれる
+Would you like to define model associations  #テーブル間の関連を定義するか
+(hasMany, hasONe, belongsTo, etc,)? (y/n)    #定義を手入力すると間違えやすいので、`y`でBakeにやってもらう
+[y] > y                                      #もし期待した関連が見つからない場合は、テーブルの外部キーの名前が`モデル名(スネークケース単数)+_idになっていない
+
+MeetingRoom hasMany meeting? (y/n)
+[y] > y
+
+Would you like to define some additional model associations? #追加で関連を登録するか
+(y/n)
+[n] > n
+
+# 追加の関連の設定
+Look okay? (y/n) #末尾の行が`Could not write to ...`となる場合ファイルの書き込み権限がないので、ディレクトリの権限を確認する
+[y] > y

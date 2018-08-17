@@ -1,0 +1,27 @@
+public class SampleComparable {
+    public static void main( String [] args ) {
+        Member m1 = new Member("Scott" , 73);
+        Member m2 = new Member("Alan" , 75);
+        if ( m1.compareTo(m2) > 0) {
+            System.out.println(m1);
+        }
+        else {
+            System.out.println(m2);
+        }
+    }
+}
+
+class Member implements Comparable<Member>{
+    private String name;
+    private int score;
+    public Mmeber ( String name, int score ) {
+        this.name = name;
+        this.score = score;
+    }
+    public int compareTo(Member m) {
+        return name.compareTo(m.name);
+    }
+    public String toString(){
+        return name + ":" + score;
+    }
+}

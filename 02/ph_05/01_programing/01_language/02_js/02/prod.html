@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>はじめの一歩</title>
+    <style>
+        table{border:solid 1px orange; border-spacing:0px;}
+        th,td{border:solid 1px orange; padding:4px; text-align: center;}
+        .outer{width: 328px; text-align: center;}
+        .prod_list{text-align: center;}
+        /*ul*/ .prod_list{list-style-type: none; background: gold; padding: 4px;}
+        li{text-align: left;}
+        [type = "button"], [type = "submit"]{margin: 16px;}
+        #basket{width: 300px; margin: auto;}
+        .empty_basket{border:dotted 6px darkcyan;
+            background: black; padding: 8px;}
+        .filled_basket{border:dotted 6px green;
+            background: yellow; padding: 8px;}
+        .groupbox{position: relative;}
+        .desc_show{font-size:12px; background:cyan; padding:4px;
+            position:absolute; left:330px; top:20px; width:120px;}
+        .desc_hide{display: none;}
+        .alert_show{font-size:12px; background:red; color:white; padding:4px;
+            position:absolute; left:330px; top:0px; width:120px;}
+        .alert_hide{display: none;}
+    </style>
+</head>
+
+    <script type="text/javascript">
+        window.addEventListener('load',
+            //ページロード時の処理
+            function(event){
+                var elem = document.getElementById('btn_addprod');
+                elem.addEventListener('click', addProduct, false);
+                elem = document.getElementById('txt_amount');
+                elem.addEventListener('focus', amount_gotFocus, false);
+                elem.addEventListener('blur', amount_lostFocus, false);
+                elem.addEventListener('keyup', amount_keyup, false);
+            }
+            , false);
+        //btn_addprodクリック時の処理
+        function addProduct(event){
+            var basket = document.getElementById('basket');
+            basket.className = 'filled_basket';
+            //選択されたオプションを取得
+            var product = '';
+            var options = document.getElementsByName('products');
+            for(var i=0; i < options.length; i++){
+                if(options[i].checked){
+                    product = options[i].value;
+                    break;
+                }
+            }
+            //個数を取得
+            var tbox = document.getElementById('txt_amount');
+            var amount = tbox.value;
+            //値を設定
+            basket.innerHTML += '<p>' + product + ' ' + amount + '個</p>';
+        }
+        //フォーカス取得時のメッセージ表示
+        function amount_gotFocus(event){
+            var desc = document.getElementById('desc_amount');
+            desc.className = 'desc_show';
+        }
+        function amount_lostFocus(event){
+            var desc = document.getElementById('desc_amount');
+            desc.className = 'desc_hide';
+        }
+        //入力チェック
+        function amount_keyup(event){
+            var amount = event.currentTarget.value;
+            var alert = document.getElementById('alert_amount');
+            if(amount > 0){
+                alert.className = 'alert_hide';
+            } else {
+                alert.className = 'alert_show';
+            }
+        }
+    </script>
+
+    <div class="outer">
+        <form class="clear">
+            <ul class="prod_list">
+                <li><input type="radio" name="products" value="none" checked>
+                    なし</li>
+                <li><input type="radio" name="products" value="リラックスチェア">
+                    リラックスチェア</li>
+                <li><input type="radio" name="products" value="リラックスデスク">
+                    リラックスデスク</li>
+                <li><input type="radio" name="products" value="ブックスタンド">
+                    ブックスタンド</li>
+            </ul>
+            <div class="groupbox">
+                <input type="text" id="txt_amount" value="0">個
+                <input type="button" id="btn_addprod" value="▼add">
+                <div id="desc_amount" class="desc_hide">
+                    購入個数を入力してください（1以上）。</div>
+                <div id="alert_amount" class="alert_hide">購入個数が0個です。</div>
+            </div>
+            <div id="basket" class="empty_basket">
+            </div>
+            <input type="submit" value="購入">
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        window.addEventListener('load',
+            //ページロード時の処理
+            function(event){
+                var result = document.getElementById('result');
+                //a要素へのイベント
+                var elem = document.getElementById('a1');
+                elem.addEventListener('click',
+                    function(event){
+                        result.innerHTML += '<li>a要素：クリックされた</li>';
+                        event.preventDefault();
+                        result.innerHTML += '<li>a要素：既定アクションをキャンセル</li>';
+                        event.stopPropagation();
+                        result.innerHTML += '<li>a要素：イベント伝播を終了</li>';
+                    }
+                    ,false);
+                //p要素へのイベント
+                elem = document.getElementById('p1');
+                elem.addEventListener('click',
+                    function(event){
+                        result.innerHTML += '<li>p要素：クリックされた</li>';
+                    }
+                    ,true);
+                //div要素へのイベント
+                elem = document.getElementById('div1');
+                elem.addEventListener('click',
+                    function(event){
+                        result.innerHTML += '<li>div要素：クリックされた</li>';
+                    }
+                    ,false);
+            }
+            , false);
+    </script>
+
+</body>
+</html>

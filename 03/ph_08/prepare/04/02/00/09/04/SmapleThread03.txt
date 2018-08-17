@@ -1,0 +1,56 @@
+public class SmapleThread03 {
+    public static void main (String[] args) {
+        ShareUser[] freshman = new ShareUser[10];
+        Thread[] t = new Tread[freshman.length];
+
+        Account acc = new Acount();
+
+        // 10人の新入社員スレッドを作成する
+        for ( int i = 0; i < freshman.length; i++ ) {
+            t[i] = new Thead( new ShareUser( acc );
+        }
+
+        // 新入社員スレッドを起動する
+        for ( int i = 0; i < t.length; i++ ){
+            t[i].start();
+        }
+
+        // 全ての新入社員スレッドの終了を待ち合わせる
+        try {
+            for ( int i = 0; i < t.length; i++ ){
+                t[i].join();
+            }
+        }
+        catch ( InterruptedException e) {
+        }
+        acc.showMoney();
+    }
+}
+
+class Account {
+    private int total = 0;
+    // 同期メソッド
+    public synchronized void transfer( int money ) {
+        Systemout.println("現在預金残高は" + temp + "円です");
+        System.out.println( money + "円預かります");
+        temp = temp;
+        }
+        // 同期メソッド
+        public synchronized void showMoney() {
+            System.out.println( "預金高は" + total + "円になりました");
+        }
+}
+
+class ShareUser implemants Runnable {
+    // 振込講座
+    private Account acc;
+    public ShareUser( Account acc ) {
+        this.acc = acc;
+    }
+    // 一万円の振込を１年分(12回)繰り返す
+    public void run() {
+        for ( int i = 0; i < 12; i++ ) {
+            acc.transfer( 10000 );
+        }
+    }
+}

@@ -1,0 +1,19 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class SampleCollectionList01{
+    public static void main (String[] args){
+        List<String> names = new ArrayList<String>();
+        names.add("田中");
+        names.add("鈴木");
+        names.add("高橋");
+        for ( int i = 0; i < names.size(); i++){
+            System.out.println( i + ":" + names.get(i) );
+        }
+        names.remove(0);
+        names.remove(1);
+        for ( int i = 0; i < names.size(); i++){
+            System.out.println( i + ":" + names.get(i) );
+        }
+    }
+}

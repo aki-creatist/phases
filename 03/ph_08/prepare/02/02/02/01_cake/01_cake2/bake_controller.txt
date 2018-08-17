@@ -1,0 +1,54 @@
+# Controllerを選択する
+what would you like to Bake? (D/M/V/C/P/F/T/Q)
+> C
+
+# 自動生成するモデルクラスを選択
+Use Database Config: (default/test) #どのDB定義を使ってDBにアクセスするかを選択
+[default] > default                 #ここでは定義した$defaultの定義を利用してDBに接続する
+
+# DBの定義を選択する
+1.MeetingRoom
+2.Meetings
+3.MeetingsMembers
+4.Members
+Enter a number from the list above,
+type in the name of another controller, or &quot;q&quot; to exit
+[q] > 1
+
+# 対話形式にするかどうか
+Would you like to build your controller interactively? (y/n)
+[y] > y
+
+# 動的Scaffoldを使うかどうか
+Would you like to use dynamic scaffolding? (y/n)    # コントローラに実処理を記述することなくCakePHPが規約にしたがって挙動する機構
+[n] > n
+
+# コントローラの基本的なCRUDメソッドを作るか
+Would you like to create some basic class methods
+(index(), add(), view(), edit())? (y/n)             # CRUDのメソッドを作るだけでなく、CRUD内の処理も作ってくれる
+[n] > y
+
+# adminルーティング(管理者しかアクセスできないCRUD)を作るかどうか
+Would you like to create the basic class methods for admin routing? (y/n)
+[n] > n
+
+# このコントローラで、HtmlHelperとFormhelper以外のヘルパーを使うかどうか
+Would you like this controller to use other helpers
+besides Htmlhelper and FormHelper? (y/n)
+[n] > n
+
+# このコントローラでコンポーネントを使うかどうか
+Would you like this controller to use any components? (y/n)
+[n] > n
+
+# フラッシュコンポーネントの使用
+Would you like to use the FlashComponent to desplay flash message? (y/n)
+[y] > y
+
+# 画面に表示するメッセージをセッション経由で表示するか
+Would you like to use Session flash messages? (y/n) # MeetingRoomsでは聞かれない
+[y] > y
+
+# 最終確認
+Look okay? (y/n)
+[y] > y

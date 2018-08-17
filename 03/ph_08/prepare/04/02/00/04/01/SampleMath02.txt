@@ -1,0 +1,10 @@
+public class SampleMath02 {
+    public static void main( String[] args ) {
+        double angle = 30.0;        // 30°
+        double red  = angle * Math.PI / 180.0;        // 角度をラジアンに変換
+        double s = Math.sin(rad);
+        double c = Math.cos(rad);
+        double t = Math.tan(rad);
+        System.out.println("sin:%6.4f, cos:%6.4f, tan:%n*, s, c, t );
+    }
+}

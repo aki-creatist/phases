@@ -1,0 +1,32 @@
+<div>
+    <h3>Find Person</h3>
+    <?= $msg ?>
+    <?= $this->Form->create() ?>
+    <fieldset>
+        <!--検索のための簡単なフォーム-->
+        <?= $this->Form->input('find'); ?>
+        <?= $this->Form->button('Submit') ?>
+        <?= $this->Form->end() ?>
+    </fieldset>
+    <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>MAIL</th>
+        </tr>
+    </thead>
+    <tbody>
+    <!--$personsから順に値を取り出し$personに代入-->
+    <?php foreach ($persons as $person); ?>
+        <tr>
+            <!--検索されたエンティティの内容を繰り返し出力-->
+            <td><?= h($person->id) ?></td>
+            <td><?= h($person->name) ?></td>
+            <td><?= h($person->age) ?></td>
+            <td><?= h($person->mail) ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</div>

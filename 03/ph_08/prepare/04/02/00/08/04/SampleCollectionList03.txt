@@ -1,0 +1,15 @@
+import java.util.Map;
+import java.util.HashMap;
+
+public class SampleCollectionList01{
+    public static void main (String[] args){
+        Map<String,String> dictionary = new HashMap<String,String>();
+        dictionary.put("apple","りんご");
+        dictionary.put("orange","みかん");
+        dictionary.put("apricot","あんず");
+        dictionary.put("peach","もも");
+        dictionary.put("orange","オレンジ");    // "orange-みかん"が"orange-オレンジ"に置き換わる
+        System.out.println( dictionary.get("apricot") );
+        System.out.println( dictionary.get("orage") );
+    }
+}

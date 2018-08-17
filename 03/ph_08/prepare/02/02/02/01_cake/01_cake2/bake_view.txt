@@ -1,0 +1,28 @@
+# Viewを選択する
+what would you like to Bake? (D/M/V/C/P/F/T/Q)
+> V
+
+# DBの定義を選択する
+1.MeetingRooms
+2.Meetings
+3.MeetingMembers
+4.Members
+Enter a number from the list above,
+type in the name of another controller, or &quot;q> to exit
+[q] > 1
+
+# 対話形式にするかどうか
+Would you like bake to build your views interactively?
+Warning: Choosing no will overwrite MeetingRooms views if it exist. (y/n)
+[n] > y
+
+# コントローラの基本的なCRUDメソッドを作るか
+Would you like to create some CRUD views
+(index, add, view, edit) for this controller?
+NOTE: Before doing so, you'll need to create your controller
+and model classes (including associated models). (y/n)
+[y] > y
+
+# adminルーティング(管理者しかアクセスできないCRUD)の画面を作るかどうか
+Would you like to create the views for admin routing? (y/n)
+[n] > n

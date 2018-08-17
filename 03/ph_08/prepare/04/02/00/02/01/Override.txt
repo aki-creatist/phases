@@ -1,0 +1,26 @@
+/*
+    personクラスでtoString()をオーバーライドしている
+    SampleObjectクラスでは、PersonクラスのtoString()を利用
+    toString()は明示的に不使用が、実体の表示や文字列との連結などの局面で、自動的に呼び出される
+*/
+
+public class SampleObject {
+    public static void main(String[] args) {
+        Person p = new Person("鈴木","東京都");
+        System.out.println(p);
+        String s = "[" + p + "]";
+        System.out.println(s);
+    }
+}
+
+class Person {
+    private String name;
+    private String address;
+    public Person( String name, String address ) {
+        this.name = name;
+        this.address = address;
+    }
+    public String toString() {
+        return "氏名:" + name + ", 住所:" + address;
+    }
+}

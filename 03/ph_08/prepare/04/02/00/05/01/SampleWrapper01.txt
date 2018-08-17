@@ -1,0 +1,21 @@
+public class SampleWrapper01 {
+    public static void main( String[] args ) {
+        Integer i = new Integer(5);        // 通常のインスタンス作成
+
+        /*
+        ボクシングを使ったインスタンス作成
+        自動的にコンストラクタが呼ばれる
+        */
+        Integer j = 3;
+        int sum1, sum2;
+        sum1 = i.intValue() + j.intValue();    // 通常のint値の取り出し
+        System.out.println(sum1);
+
+        /*
+        アンボクシングを使ったint値の取り出し
+        自動的にintValue() が呼ばれる
+        */
+        sum2 = i + j;
+        System.out.println(sum2);
+    }
+}

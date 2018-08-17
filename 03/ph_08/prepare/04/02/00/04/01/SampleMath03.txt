@@ -1,0 +1,7 @@
+//２の平方根(ルート2)を表示する
+
+public class SampleMath03 {
+    public static void main( String[] args ){
+        System.out.println("2.0の平方根：" + Math.sqrt(2.0) );
+    }
+}

@@ -1,0 +1,9 @@
+public class SampleMath04 {
+    public static void main( String[] args ) {
+        double value = 1.25;
+        double f = Math.floor(value);        // 切り捨て
+        double r = Math.round(value);        // 四捨五入
+        double c = Math.ceil(value);            // 切り上げ
+        System.out.println("切り捨て:%f, 四捨五入:%f, 切り上げ:%f%n", f, r, c );
+    }
+}
