@@ -14,7 +14,7 @@ function AA(){}
 
 ```bash
 git add .
-git commit -m “add Fx AA()”
+git commit -m "add Fx AA()"
 ```
 
 ```bash
@@ -30,7 +30,7 @@ function BB(){}
 ```
 
 ```bash
-git commit -am “add Fx BB()”
+git commit -am "add Fx BB()"
 ```
 
 ```bash
@@ -46,7 +46,7 @@ function BB(){}
 ```
 
 ```bash
-git commit -am “add Fx CC()”
+git commit -am "add Fx CC()"
 ```
 
 ```bash
@@ -80,13 +80,13 @@ git revert 2501611
 ↓下記のように修正
 
 ```text
-Revert “delete Fx BB” 
+Revert "delete Fx BB" 
 ```
 
 ↓下記のようなメッセージが表示される
 
 ```text
-"[detached HEAD 1e98321] Revert “delete Fx BB()”
+"[detached HEAD 1e98321] Revert "delete Fx BB()"
 1 file changed, 1 insertion(+), 1 deletion(-)"
 ```
 
@@ -159,7 +159,7 @@ pick f56574b add Fx CC()
 * `r`, `reword`: コミットを利用するが、コミットメッセージは編集する。
 * `e`, `edit`: コミットを利用しますが、修正のため一時停止する。
 * `s`, `squash`: コミットを利用しますが、前のコミットと合体する。
-* `f`, `fixup`: “squash”に似ているが、コミットメッセージは破棄する。
+* `f`, `fixup`: "squash"に似ているが、コミットメッセージは破棄する。
 * `x`, `exec`: シェルコマンドを実行する
 
 行の並べ替えは可能で、上から下に実行されます。

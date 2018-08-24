@@ -12,20 +12,20 @@ mkdir
 #リポジトリ(変更記録の貯蓄場所)の初期化
 git init
 #ファイル作成+書き込み
-echo “1st commit” > 新ファイル	
+echo "1st commit" > 新ファイル	
 #ファイルを表示
 cat ファイル名	
 #ファイルを表示
 git add ファイル名	
 #インデックス(=変更内容の一時保存場所の内容をリポジトリにコピー
-git commit -m “メッセ"
+git commit -m "メッセ"
 ```
 
 ```bash
 #履歴の確認
 git log
 #ファイルに追加書き
-echo “2nd commit” >> ファイル	
+echo "2nd commit" >> ファイル	
 #差分の確認
 git diff 旧ID 新ID
 #ファイルを削除する
@@ -40,11 +40,11 @@ git checkout ID ファイル名
 #最新コミットのIDを確認
 git rev-parse HEAD
 #追加書き
-echo “3rd commit” >> ファイル
+echo "3rd commit" >> ファイル
 #カレントディレクトリ内を全てaddする
 git add .
 #コミットする
-git commit -m “3rd commit” >> ファイル
+git commit -m "3rd commit" >> ファイル
 #履歴を確認する
 git log
 #履歴を確認する
@@ -55,18 +55,18 @@ git show
 
 ```bash
 #追加書き
-echo “4th commit” >> ファイル
+echo "4th commit" >> ファイル
 #addからcommitまで一括処理( -am とも書ける)
-git commit -a -m “4th commit”
+git commit -a -m "4th commit"
 ```
 
 ## 一括で行うオプションの注意
 
 ```bash
 #新規ファイル作成
-echo “will mistake” > 新ファイル
+echo "will mistake" > 新ファイル
 #警告が出る
-git commit -a -m “will mistake”
+git commit -a -m "will mistake"
 ```
 
 ```text
@@ -91,9 +91,9 @@ git log (もしくは(git show)
 
 ```bash
 #ファイル変更
-echo “5th commit” >> 既存ファイル
+echo "5th commit" >> 既存ファイル
 #変更された既存ファイルと一緒に行う場合にはaddからcommitの一括処理ができてしまう
-git commit -am “新規と既存を一緒にコミット”
+git commit -am "新規と既存を一緒にコミット"
 ```
 
 ## 間違ってインデックスに載せたファイルを削除する
@@ -102,9 +102,9 @@ git commit -am “新規と既存を一緒にコミット”
 
 ```bash
 #既存ファイルに追加書きをしてファイルを変更する
-echo “6th commit” >> 既存ファイル
+echo "6th commit" >> 既存ファイル
 #新規ファイルを作成
-echo “will deleted” > 新規ファイル
+echo "will deleted" > 新規ファイル
 #インデックスに登録
 git add .
 #引数を付けずにコミットする
@@ -126,5 +126,5 @@ git reset HEAD
 #不要になったファイル削除
 rm 新規ファイル
 #必要なものだけ改めてコミット
-git commit -m “メッセ”
+git commit -m "メッセ"
 ```

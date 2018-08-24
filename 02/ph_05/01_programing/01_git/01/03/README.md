@@ -4,7 +4,7 @@
 
 ```bash
 #既存ファイルに追記する
-echo “reset test” >> sample.txt
+echo "reset test" >> sample.txt
 #追記できていることを確認
 cat sample.txt
 #最新のコミットの状態に戻る ※ファイル名は指定できない
@@ -17,10 +17,10 @@ git reset —hard HEAD
 ```
 
 ```bash
-#“reset test”という追記が消えていることを確認
+#"reset test"という追記が消えていることを確認
 cat sample.txt
 #もう一度、追加書き込みをする
-echo “reset test” >> sample.txt
+echo "reset test" >> sample.txt
 #addしてインデックスに載せる
 git add .
 #インデックスにファイルがあることを確認する
@@ -37,24 +37,24 @@ git status
 #sample.txt(既存ファイル)がある場合には削除する
 rm sample.txt
 #新規ファイルを作成
-echo “残す” > checkout_test.txt
+echo "残す" > checkout_test.txt
 #新規ファイルを作成
-echo “残す” > not_checkout.txt
+echo "残す" > not_checkout.txt
 #addしてインデックスに載せる
 git add .
 #コミットする(テスト用の最新コミットを作成)
 git commit
 #ファイルに追記する
-echo “残さない” >> checkout_test.txt
+echo "残さない" >> checkout_test.txt
 #ファイルに追記する
-echo “残す” >> not_checkout.txt
+echo "残す" >> not_checkout.txt
 #コミットする
 git commit -a
 #checkout_test.txtを最新コミットの状態に戻す
 git checkout HEAD checkout_test.txt
-#“残さない”テキストが消えていることを確認
+#"残さない"テキストが消えていることを確認
 cat checkout_test.txt
-#“残す”が２行残っていることを確認
+#"残す"が２行残っていることを確認
 cat not_checkout.txt
 ```
 
@@ -86,11 +86,11 @@ touch head.txt
 #addしてインデックスに載せる
 git add .
 #コミットする
-git commit -m “ここに戻る”
+git commit -m "ここに戻る"
 #ファイルに書き込みをする
-echo “will delete” >> head.txt
+echo "will delete" >> head.txt
 #addしてインデックスに載せる
-git commit -am “これはHEADになる”
+git commit -am "これはHEADになる"
 #ログを確認する
 git log —oneline
 ```
@@ -118,15 +118,15 @@ touch 2head.txt
 #addしてインデックスに載せる
 git add .
 #コミットする
-git commit -m “２個前”
+git commit -m "２個前"
 #ファイルに書き込みをする
-echo “will delete” >> 2head.txt
+echo "will delete" >> 2head.txt
 #addしてインデックスに載せる
-git commit -am “スキップされる”
+git commit -am "スキップされる"
 #ファイルに書き込みをする
-echo “will delete too” >> 2head.txt
+echo "will delete too" >> 2head.txt
 #addしてインデックスに載せる
-git commit -am “HEADになる”
+git commit -am "HEADになる"
 #ログを確認する
 git log —oneline
 ```
@@ -249,7 +249,7 @@ untracked files:
 ```
 
 ```bash
-git commit -m “defg”
+git commit -m "defg"
 ```
 
 ```text
@@ -264,13 +264,13 @@ create mode 100644 gg"
 
 ```bash
 #ファイルに追記する
-echo “aa” >> aa
+echo "aa" >> aa
 #addしてコミットする
-git commit -am “add aa”
+git commit -am "add aa"
 #ログを確認する
 git log —oneline
 #ファイルに追記する
-echo “bb” >> aa
+echo "bb" >> aa
 #エディタが開くのでそのまま保存
 git commit —amend
 #HEADに新規に追加した変更が反映されている
@@ -289,9 +289,9 @@ git log —oneline
 #新規ファイルを作成
 touch ignoreFile
 #.igitgnoreというファイルを作成し、無視するファイル名を記載
-echo “ignoreFile” > .gitignore
+echo "ignoreFile" > .gitignore
 #変更してみる
-echo “This file will be ignored” >> ignoreFile
+echo "This file will be ignored" >> ignoreFile
 #addする
 git add .
 #変更ファイルの中にignoreFileは含まれていないことを確認
@@ -305,7 +305,7 @@ git status
 
 ```bash
 #先ほどのファイルにさらに追記してみる
-echo “ignore??” >> ignoreFile
+echo "ignore??" >> ignoreFile
 #addする
 git add .
 #やはり追加されないことを確認
@@ -325,7 +325,7 @@ touch addedFile
 #addする
 git add .
 #.gitignoreに無視するファイルとして登録
-echo “addedFile” >> .gitignore
+echo "addedFile" >> .gitignore
 #ステージに変更が反映されてしまっていることを確認する
 git staus
 #アンステージする
@@ -333,7 +333,7 @@ git rm —cached addedFile
 #アンステージされたことを確認する
 git status
 #ファイルに変更を与える
-echo “ignore test” >> addedFile
+echo "ignore test" >> addedFile
 #今度は変更が反映されていないことを確認する
 git status
 ```

@@ -5,9 +5,9 @@
 ```bash
 mkdir local
 git init
-echo “master01” > sample.txt
+echo "master01" > sample.txt
 git add .
-git commit -m “master01"
+git commit -m "master01"
 ```
 
 ```bash
@@ -55,7 +55,7 @@ git log --oneline
 ## ツリー状で表示する設定をする
 
 ```bash
-git config —global alias.tree ‘log —graph —all —format=“%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset%s"'
+git config —global alias.tree ‘log —graph —all —format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset%s"'
 ```
 
 * `%x09`: タブ区切り(タブの16進数コード0x09)
