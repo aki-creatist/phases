@@ -1,0 +1,17 @@
+/* CSS Document */
+header, nav, main, footer {
+    display: block;
+}
+body {
+    width: 100%;
+}
+#wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+main {
+    background-color: #cccccc;
+}
+footer {
+    text-align: center;
+}
